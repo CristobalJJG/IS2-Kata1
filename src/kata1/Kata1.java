@@ -1,12 +1,13 @@
 package kata1;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Kata1 {
     public static void main(String[] args) {
-        Calendar date = GregorianCalendar.getInstance();
-        date.set(2000, 3, 1);
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate date = LocalDate.parse("01/03/2000", format);
+        
         Person person = new Person("Nano", date);
         System.out.println(person.getName() + " tiene " + person.getAge() + " años.");
     }
